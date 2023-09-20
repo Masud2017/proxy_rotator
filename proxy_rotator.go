@@ -221,9 +221,12 @@ func (proxyHandler *ProxyHandler) rotateProxy() string {
 	return proxy
 }
 
-func (proxyHandler *ProxyHandler) applyNewProxy() {
+func (proxyHandler *ProxyHandler) ApplyNewProxy() {
 	newValidProxy := proxyHandler.rotateProxy()
 
 	os.Setenv("HTTP_PROXY", newValidProxy)
 }
 
+func (proxyHandler *ProxyHandler) ClearProxy() {
+	os.Unsetenv("HTTP_PROXY")
+}
