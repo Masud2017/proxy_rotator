@@ -18,6 +18,8 @@ go mod tidy
 import (
     "fmt"
     "github.com/Masud2017/proxy_rotator"
+    "io/ioutil"
+    "net/http"
 )
 ```
 
