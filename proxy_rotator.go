@@ -227,18 +227,3 @@ func (proxyHandler *ProxyHandler) applyNewProxy() {
 	os.Setenv("HTTP_PROXY", newValidProxy)
 }
 
-func testProxy() {
-	client := &http.Client{}
-	req, _ := http.NewRequest("GET", "http://ipinfo.io/json", nil)
-	resp, _ := client.Do(req)
-
-	body, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(body))
-}
-
-func main() {
-	proxyHandler := ProxyHandler{}
-	proxyHandler.applyNewProxy()
-	testProxy()
-	//download_proxy()
-}
