@@ -221,12 +221,18 @@ func (proxyHandler *ProxyHandler) rotateProxy() string {
 	return proxy
 }
 
+/**
+	Automatically rotates proxy and apply to the system.
+*/
 func (proxyHandler *ProxyHandler) ApplyNewProxy() {
 	newValidProxy := proxyHandler.rotateProxy()
 
 	os.Setenv("HTTP_PROXY", newValidProxy)
 }
 
+/**
+	This method should be called after using the applyNewProxy() method
+*/
 func (proxyHandler *ProxyHandler) ClearProxy() {
 	os.Unsetenv("HTTP_PROXY")
 }
