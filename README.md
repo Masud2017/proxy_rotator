@@ -35,8 +35,9 @@ func testProxy() {
 
 func main() {
 	proxyHandler := ProxyHandler{}
-	proxyHandler.applyNewProxy() # this will automatically apply the proxy to the system.
+	proxyHandler.ApplyNewProxy() # this will automatically apply the proxy to the system.
 	testProxy()
+	proxyHandler.ClearProxy() # after using the proxy it is important to remove it before it gets invalid.
 }
 ```
 
