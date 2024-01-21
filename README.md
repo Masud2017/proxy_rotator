@@ -34,7 +34,7 @@ func testProxy() {
 }
 
 func main() {
-	proxyHandler := ProxyHandler{}
+	proxyHandler := proxy_rotator.ProxyHandler{}
 	proxyHandler.ApplyNewProxy() # this will automatically apply the proxy to the system.
 	testProxy()
 	proxyHandler.ClearProxy() # after using the proxy it is important to remove it before it gets invalid.
